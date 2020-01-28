@@ -26,14 +26,13 @@ def find_the_cheese(array)
   test = cheese_types.any?{|b| array.include?(b)}
   cheese = nil 
 if test 
-  if array.find {|d| d == "cheddar"}
+  (if array.find {|d| d == "cheddar"}
     cheese = "cheddar"
-  end 
-  if array.find {|d| d == "gouda"}
+  end) or (if array.find {|d| d == "gouda"}
      cheese = "gouda"  
-  end 
-
-    
+  end) or  (if array.find {|d| d == "camembert"}
+     cheese = "camembert"  
+  end)
 end 
   cheese 
 end
